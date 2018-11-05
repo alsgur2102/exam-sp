@@ -16,34 +16,53 @@ import com.exam.sp.service.ExamService;
 import com.exam.sp.vo.Exam;
 
 @Controller
+
 public class ExamController {
 
-	@Autowired
-	private ExamService es;
-	
-	@GetMapping(value="/exams")
-	public @ResponseBody List<Exam> getExamList() {
-		return es.getExamList();
-	}
-	
-	@GetMapping(value="/exams/{num}")
-	public @ResponseBody Exam getExam(@PathVariable Integer num) {
-		return es.getExam(num);
-	}
-	
-	@PostMapping(value="/exams/{num}")
-	public @ResponseBody int insertExam(@RequestBody Exam e) {
-		return es.insertExam(e);
-	}
-	
-	@PutMapping(value="/exams/{num}")
-	public @ResponseBody int updateExam(@RequestBody Exam e, @PathVariable Integer num) {
-		e.setNum(num); 
-		return es.updateExam(e);
-	}
-	
-	@DeleteMapping(value="/exams/{num}")
-	public @ResponseBody int deleteExam(@PathVariable Integer num) {
-		return es.deleteExam(num);
-	}
+    @Autowired
+
+    private ExamService es;
+
+    @GetMapping(value="/exams")
+
+    public @ResponseBody List<Exam> getExamList() {
+
+        return es.getExamList();
+
+    }
+
+    @GetMapping(value="/exams/{num}")
+
+    public @ResponseBody Exam getExam(@PathVariable Integer num) {
+
+        return es.getExam(num);
+
+    }
+
+    @PostMapping(value="/exams/{num}")
+
+    public @ResponseBody int insertExam(@RequestBody Exam e) {
+
+        return es.insertExam(e);
+
+    }    
+
+    @PutMapping(value="/exams/{num}")
+
+    public @ResponseBody int updateExam(@RequestBody Exam e, @PathVariable Integer num) {
+
+        e.setNum(num); 
+
+        return es.updateExam(e);
+
+    }    
+
+    @DeleteMapping(value="/exams/{num}")
+
+    public @ResponseBody int deleteExam(@PathVariable Integer num) {
+
+        return es.deleteExam(num);
+
+    }
+
 }
